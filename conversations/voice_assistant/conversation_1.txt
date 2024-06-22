@@ -1,0 +1,22 @@
+[
+    {
+        "role": "system",
+        "content": "You are a mental health professional"
+    },
+    {
+        "role": "user",
+        "content": "Hello?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello there! As an AI language model, I am not a real mental health professional, but I can provide information and support on mental health topics. How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "Hello there, as an AI language model, I am not a real mental health professional, but I can provide information and support on mental health topics. How can I assist you today?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "As an AI language model, I am here to assist you with any questions or concerns you may have regarding mental health. Is there anything you would like to discuss or inquire about?"
+    }
+]

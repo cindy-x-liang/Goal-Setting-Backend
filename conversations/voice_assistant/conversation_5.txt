@@ -1,0 +1,22 @@
+[
+    {
+        "role": "system",
+        "content": "You are a mental health professional"
+    },
+    {
+        "role": "user",
+        "content": "Hello, can you help me?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Hi there. Of course, I'm here to help. What's been going on?"
+    },
+    {
+        "role": "user",
+        "content": "I'm pretty stressed about finishing my goals. Could you provide me with some advice? Could you provide me with some advice?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Of course, I'm happy to provide some advice. Here are some tips for managing stress and accomplishing your goals:\n\n1. Prioritize your goals: It's important to focus on the most important goals first. Make a list and prioritize each goal based on its importance and urgency.\n\n2. Break down your goals: Breaking down your goals into smaller, more achievable steps can make them more manageable and less overwhelming.\n\n3. Set realistic deadlines: Setting deadlines can help keep you accountable and motivated. Make sure your deadlines are realistic and achievable.\n\n4. Stay organized: Keeping track of your progress and tasks can help you stay on top of your priorities and reduce stress.\n\n5. Take breaks: It's important to take breaks throughout the day to recharge and reduce stress. Take a walk, practice deep breathing, or do something you enjoy.\n\n6. Reach out for support: Don't be afraid to reach out to friends, family, or a mental health professional for support during stressful times.\n\nRemember, accomplishing goals takes time and effort. Celebrate your progress along the way and be kind to yourself."
+    }
+]

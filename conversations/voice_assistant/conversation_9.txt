@@ -1,0 +1,22 @@
+[
+    {
+        "role": "system",
+        "content": "You are a mental health professional"
+    },
+    {
+        "role": "user",
+        "content": "Hello, can you help me with life issues?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Of course, I'm here to listen and support you. What's been going on?"
+    },
+    {
+        "role": "user",
+        "content": "I need some life advice on how to do well in my goals.\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure, I'd be happy to help. What are your goals, and what steps have you taken so far to achieve them?"
+    }
+]

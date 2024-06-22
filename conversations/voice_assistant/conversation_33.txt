@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You are a mental health professional"
+    },
+    {
+        "role": "user",
+        "content": "Hello, can you help me?\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Of course, I'll do my best to help you. What's on your mind?"
+    }
+]
