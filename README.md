@@ -7,3 +7,9 @@ Users may also evaluate their progress on their goalswhich is ran by OpenAI API 
 User's can also chat with a virtual therapist bot which uses whisper and text-to-speech libraries in python. 
 
 Demo and more detailed description on frontend github repo:https://github.com/cindy-x-liang/Goal-Setting-Frontend
+
+# How to run
+1. make sure your OpenAI API key is set at os.environ["OPENAI_API_KEY"] =
+2. create a virtual environment
+3. install pyttsx3, openai, flask, ntlk, pandas, SpeechRecognition
+4. run python server.py
