@@ -3,7 +3,7 @@ import threading
 import time
 from db import db
 from flask import Flask, request, jsonify
-from db import Goals
+from db import Goals, Logs
 from flask_cors import CORS
 import nltk
 import pandas as pd
@@ -41,7 +41,6 @@ def failure_response(message, code=404):
 
 import getpass
 import os
-
 
 
 from langchain_openai import ChatOpenAI
@@ -120,6 +119,18 @@ def get_goal(goal_id):
         return failure_response("Goal not found!") 
     return jsonify(course.to_dict()), 201
 
+@app.route("/goals/<int:goal_id>/", methods=["DELETE"])
+def delete_goal(goal_id):
+    """
+    Endpoint for deleting a task by id
+    """
+    goal = Goals.query.filter_by(id=goal_id).first()
+    if goal is None:
+        return failure_response("Task not found!")
+    db.session.delete(goal)
+    db.session.commit()
+    return success_response(goal.to_dict())
+
 def preprocess_text(text):
 
     # Tokenize the text
@@ -166,8 +177,44 @@ def make_log():
     body = json.loads(request.data)
     new_message = {"date":body.get("date"), "message":body.get("message")}
     log = body.get("message")
+    new_log = Logs(
+        date = body.get("date"),
+        message = body.get("message"),
+    )
+    # if not body.get("code"):
+    #     return failure_response("Sender not found",400)
+    
+    # if not body.get("name"):
+    #     return failure_response("Sender not found",400)
+
+    db.session.add(new_log) 
+    db.session.commit()
+
     dontwannachangedb = str(get_sentiment(new_message['message']))
     return jsonify({'sentiment':str(get_sentiment(new_message['message']))}),201
+
+@app.route("/logs/")
+def get_logs():
+    """
+    Endpoint for getting all tasks
+    """
+
+    logs = [log.to_dict() for log in Logs.query.all()] 
+
+    return success_response(logs)
+
+@app.route("/logs/<int:log_id>/", methods=["DELETE"])
+def delete_log(log_id):
+    """
+    Endpoint for deleting a task by id
+    """
+    log = Logs.query.filter_by(id=log_id).first()
+    if log is None:
+        return failure_response("Task not found!")
+    db.session.delete(log)
+    db.session.commit()
+    return success_response(log.to_dict())
+
 @app.route("/senti/")
 def get_senti():
     """
@@ -189,6 +236,7 @@ def update_goal(goal_id):
     db.session.commit() 
     
     return jsonify(course.to_dict()), 201
+    
 
 import openai
 import speech_recognition as sr

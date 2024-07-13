@@ -65,3 +65,48 @@ class Goals(db.Model):
             "startDate": self.startDate,
             "endDate": self.endDate
         }
+
+class Logs(db.Model):
+    """
+    lo model
+    """
+
+    __tablename__ = "Log"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    date = db.Column(db.String, nullable=False)
+    message = db.Column(db.String, nullable=False)
+   
+
+
+    def __init__(self, **kwargs):
+        """
+        Initializes a User object
+        """
+
+        self.date = kwargs.get("date", "")
+        self.message = kwargs.get("message")
+    
+
+    def to_dict(self):
+        """
+        Serializes a user object
+        """
+        return {
+            "id": self.id,
+            "date": self.date,
+            "message": self.message
+        }
+
+    # def simple_serialize(self):
+    #     """
+    #     Serialize a User object without the courses field
+    #     """
+
+    #     return {
+    #         "id": self.id,
+    #         "title": self.title,
+    #         "progress": self.progress,
+    #         "description": self.description,
+    #         "startDate": self.startDate,
+    #         "endDate": self.endDate
+    #     }
